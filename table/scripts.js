@@ -52,13 +52,25 @@ class Person{
 }
 
 function init(){
+    const form = document.getElementById('form')
+    
     for(let i = 0; i < array.length; i++){
         const pers = new Person(array[i])
         pers.render(document.getElementById('tbodyId'));
     }
-}
 
-init();
+    const controller = new FormController(form);
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        const obj = {
+            firstname1 : controller.firstname1,
+            firstname2 : controller.firstname2,
+            lastname : controller.lastname
+        }
+        const pers = new Person(obj)
+        pers.render(document.getElementById('tbodyId'))
+    })
+}
 
 class FormController{
     #form
@@ -83,3 +95,5 @@ class FormController{
         return firstnev2.value;
     }
 }
+
+init();
