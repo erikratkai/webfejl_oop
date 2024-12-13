@@ -26,6 +26,7 @@ class Person{
         this.firstname2 = obj.firstname2;
         this.lastname = obj.lastname
     }
+
     render(parentElement){
         const sor = document.createElement('tr')
         parentElement.appendChild(sor)
@@ -58,3 +59,27 @@ function init(){
 }
 
 init();
+
+class FormController{
+    #form
+    constructor(form){
+        this.#form = form
+    }
+
+    #getInputById(id){
+        return this.#form.querySelector('#' + id)
+    }
+
+    get lastname(){
+        const lastnev = this.#getInputById('lastname')
+        return lastnev.value;
+    }
+    get firstname1(){
+        const firstnev1 = this.#getInputById('lastname')
+        return firstnev1.value;
+    }
+    get firstname2(){
+        const firstnev2 = this.#getInputById('lastname')
+        return firstnev2.value;
+    }
+}
