@@ -4,25 +4,25 @@ class ArrayList{
      * @type {Number}
      */
     #length
-    #fityma
+    #state
 
     get Count(){
-        return this.#length //visszatér a length micsodájával. (skibidi toilet skibidi skibidi toilet toilet sigma rizz xd)
+        return this.#length //visszatér a length micsodájával. 
     }
 
     constructor(){
         this.#length = 0
-        this.#fityma = {} // vörös a szalag vagy szőrös a valag
+        this.#state = {} 
     }
-    Add(item){  //a lány a lány alányal vagy a nyúl a lány alányúl
-        const makk = this.#length
-        this.#fityma[makk] = item //a belső objektum index tulajdonságának megadjuk a bemeneti paraméter értékét. jó //de nem mindegy az sem hogy mire fekszel egy nedves kőre vagy egy kedves nőre
-        Object.defineProperty(this, makk,{
+    Add(item){  
+        const asd = this.#length
+        this.#state[asd] = item //a belső objektum index tulajdonságának megadjuk a bemeneti paraméter értékét.
+        Object.defineProperty(this, asd,{
             get: function(){
-                return this.#fityma[makk]
+                return this.#state[asd]
             },
             set: function(value){
-                this.#fityma[makk] = value
+                this.#state[asd] = value
             },
         })    //először a comment: mit szeretnénk csinálni? az aktuális indexen keresztül szeretnénk elérni a hozzáadott elemet a példányon keresztül.
         
@@ -31,7 +31,7 @@ class ArrayList{
     
     Clear(){
         this.#length = 0
-        this.#fityma = {}
+        this.#state = {}
     }
 }
 const pers = {}
@@ -40,13 +40,13 @@ pers['a'] = 'Józsi'
 pers['a'] = 'kirng'
 pers[0] = 'tojás'
 pers.a = 'skibnindni'
-//pers.0 = 'Karl Marx'  //ez nem működik mert idióta vagy és a 0 az nem egy tulajdonság, bazdmeg. nem is lehet az i guess.
+//pers.0 = 'Karl Marx'  //ez nem működik
 console.log(pers)
 
 const kakas = {}
-Object.defineProperty(kakas, "fity", {
+Object.defineProperty(kakas, "nev", {
     value: 'matyi',
     writable: true
 })
-kakas.fity = 'magdolna'
+kakas.nev = 'magdolna'
 console.log(kakas)
